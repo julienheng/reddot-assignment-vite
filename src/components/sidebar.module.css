@@ -1,0 +1,31 @@
+.sidebar {
+  background-color: black;
+  height: 100vh;
+  border: 1px dashed white;
+  transition: 0.3s ease-in-out;
+  z-index: 100;
+  position: fixed;
+  background-color: #3D3832
+}
+
+.open {
+  width: 5%;
+}
+
+.closed {
+  width: 25%;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  background-color: white;
+  border-radius: 100%;
+  font-size: 35px;
+  position: absolute;
+  right: -20px;
+  top: 40px;
+  cursor: pointer;
+}

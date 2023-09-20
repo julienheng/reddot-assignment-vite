@@ -1,0 +1,24 @@
+.maincomponent {
+  border: 2px solid green;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  min-height: 100vh;
+}
+
+.component {
+  flex-direction: column;
+  border: 1px solid blue;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur {
+  filter: blur(3px);
+  /* filter: brightness(0.5); */
+}
