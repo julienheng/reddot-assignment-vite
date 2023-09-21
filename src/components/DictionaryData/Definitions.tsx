@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import styles from "./definitons.module.css";
+import styles from "./definitions.module.css";
 
 type Props = {
   data: any;

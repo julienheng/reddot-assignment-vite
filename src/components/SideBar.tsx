@@ -1,17 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BsArrowLeftCircle } from "react-icons/bs";
 import styles from "../components/sidebar.module.css";
 
 type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
-  searchHistory: string[];
+  searchWord: string[];
   setInput: (input: string) => void;
 };
 
 export default function SideBar({
   open,
   setOpen,
-  searchHistory,
+  searchWord,
   setInput,
 }: Props) {
   const handleClick = (word: string) => {
@@ -20,9 +21,7 @@ export default function SideBar({
   };
 
   return (
-    <div
-      className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}
-    >
+    <div className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}>
       <BsArrowLeftCircle
         className={`${styles.arrow} ${open && styles.rotate}`}
         onClick={() => setOpen(!open)}
@@ -30,7 +29,7 @@ export default function SideBar({
       <div className={styles.content}>
         <h2>Search History</h2>
         <div>
-          {searchHistory.map((word, index) => (
+          {searchWord.map((word: any, index: number) => (
             <p key={index} onClick={() => handleClick(word)}>
               {word}
             </p>

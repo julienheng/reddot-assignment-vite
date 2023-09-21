@@ -8,12 +8,18 @@ import MainComponent from "./components/MainComponent";
 
 function App() {
   const [open, setOpen] = useState<boolean>(true);
-  const [searchHistory, setSearchHistory] = useState<string[]>([]);
+  const [searchWord, setSearchWord] = useState<string[]>([]);
+  const [searchResults, setSearchResults] = useState<string[]>([]);
   const [input, setInput] = useState<string>("");
 
   useEffect(() => {
-    const history = JSON.parse(localStorage.getItem("searchHistory") || "[]");
-    setSearchHistory(history);
+    const word = JSON.parse(localStorage.getItem("searchWord") || "[]");
+    setSearchWord(word);
+  }, []);
+
+  useEffect(() => {
+    const results = JSON.parse(localStorage.getItem("searchResults") || "[]");
+    setSearchResults(results);
   }, []);
 
   return (
@@ -21,14 +27,16 @@ function App() {
       <SideBar
         open={open}
         setOpen={setOpen}
-        searchHistory={searchHistory}
+        searchWord={searchWord}
         setInput={setInput}
       />
       <MainComponent
         open={open}
-        setSearchHistory={setSearchHistory}
+        setSearchWord={setSearchWord}
         input={input}
         setInput={setInput}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
       />
     </main>
   );

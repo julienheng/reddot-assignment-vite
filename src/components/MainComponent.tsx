@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import styles from "./maincomponent.module.css";
 import { useState, useEffect } from "react";
 
@@ -7,12 +8,21 @@ import DictionaryData from "./DictionaryData/DictionaryData";
 
 type Props = {
   open: boolean;
-  setSearchHistory: (searchHistory: string[]) => void;
+  setSearchWord: (searchWord: string[]) => void;
   input: string;
   setInput: (input: string) => void;
+  searchResults: string[];
+  setSearchResults: (searchResults: string[]) => void;
 };
 
-export default function MainComponent({ open, input, setInput, setSearchHistory }: Props) {
+export default function MainComponent({
+  open,
+  input,
+  setInput,
+  setSearchWord,
+  searchResults,
+  setSearchResults,
+}: Props) {
   const [debouncedInput, setDebouncedInput] = useState<string>("");
 
   useEffect(() => {
@@ -32,7 +42,9 @@ export default function MainComponent({ open, input, setInput, setSearchHistory 
       <DictionaryData
         input={debouncedInput}
         setInput={setInput}
-        setSearchHistory={setSearchHistory}
+        setSearchWord={setSearchWord}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
       />
     </div>
   );
