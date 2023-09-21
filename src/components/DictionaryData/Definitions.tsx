@@ -33,11 +33,11 @@ export default function Definitions({ data }: Props) {
 
               return (
                 <div
-                  className={`${styles.definition} ${cssClass}`}
+                  className={`${styles.definitionwrapper} ${cssClass}`}
                   key={meaningIndex}
                 >
                   <h4>{partOfSpeech}</h4>
-                  <div>
+                  <div className={styles.definition}>
                     <p>{meaning.definitions[0].definition}</p>
                     <p className={styles.example}>
                       {meaning.definitions[0].example}

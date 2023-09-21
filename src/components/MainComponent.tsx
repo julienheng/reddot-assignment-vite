@@ -7,12 +7,13 @@ import DictionaryData from "./DictionaryData/DictionaryData";
 
 type Props = {
   open: boolean;
+  setSearchHistory: (searchHistory: string[]) => void;
+  input: string;
+  setInput: (input: string) => void;
 };
 
-export default function MainComponent({ open }: Props) {
-  const [input, setInput] = useState<string>("hello");
+export default function MainComponent({ open, input, setInput, setSearchHistory }: Props) {
   const [debouncedInput, setDebouncedInput] = useState<string>("");
-  // const [history, setHistory] = useState<string[]>([]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
@@ -28,7 +29,11 @@ export default function MainComponent({ open }: Props) {
         <h1 className={styles.heading}>English API Dictionary</h1>
         <SearchBar input={input} setInput={setInput} />
       </div>
-      <DictionaryData input={debouncedInput} setInput={setInput} />
+      <DictionaryData
+        input={debouncedInput}
+        setInput={setInput}
+        setSearchHistory={setSearchHistory}
+      />
     </div>
   );
 }

@@ -8,9 +8,10 @@ import Definitions from "./Definitions";
 type Props = {
   input: string;
   setInput: (input: string) => void;
+  setSearchHistory: (searchHistory: string[]) => void;
 };
 
-export default function DictionaryData({ input, setInput }: Props) {
+export default function DictionaryData({ input, setInput, setSearchHistory }: Props) {
   const [data, setData] = useState<any[]>([]);
   const [error, setError] = useState<string>();
 
@@ -41,13 +42,21 @@ export default function DictionaryData({ input, setInput }: Props) {
 
     if (input) {
       fetchData();
+
+      // Save search history to localStorage
+      const history = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+      history.unshift(input); // Add to the beginning of the array
+      localStorage.setItem("searchHistory", JSON.stringify(history));
+
+      // Update searchHistory state
+      setSearchHistory(history);
     }
   }, [input, setInput]);
 
   if (error) return <div className={styles.error}>{error}</div>;
 
   if (!data || data.length === 0) {
-    return <div>No data available.</div>;
+    return <div>What word are you looking for?</div>;
   }
 
   console.log(data);

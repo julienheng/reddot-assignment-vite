@@ -2,7 +2,7 @@
   margin-top: 20px;
 }
 
-.definition {
+.definitionwrapper {
   margin: 12px 0;
 }
 
@@ -34,5 +34,14 @@
   background-color: #F5E0C6;
   border-radius: 5px;
   padding: 10px
+}
+
+.definition, p {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+h4 {
+  font-size: 1rem
 }
 
