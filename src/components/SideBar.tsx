@@ -6,21 +6,16 @@ type Props = {
   open: boolean;
   setOpen: (open: boolean) => void;
   searchWord: string[];
-  history: boolean;
-  setHistory: (history: boolean) => void;
+  handleClickWord: (word: string) => void;
 };
 
 export default function SideBar({
   open,
   setOpen,
   searchWord,
-  history,
-  setHistory,
+  
+  handleClickWord
 }: Props) {
-  const handleClick = () => {
-    setOpen(!open);
-    setHistory(!history);
-  };
 
   return (
     <div className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}>
@@ -32,7 +27,7 @@ export default function SideBar({
         <h2>Search History</h2>
         <div>
           {searchWord.map((word: any, index: number) => (
-            <p key={index} onClick={() => handleClick()}>
+            <p key={index} onClick={() => handleClickWord(word)}>
               {word}
             </p>
           ))}

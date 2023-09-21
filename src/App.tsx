@@ -8,7 +8,7 @@ import MainComponent from "./components/MainComponent";
 
 function App() {
   const [open, setOpen] = useState<boolean>(true);
-  const [history, setHistory] = useState<boolean>(false); // ["hello", "world"
+  const [history, setHistory] = useState<string>(""); //
   const [searchWord, setSearchWord] = useState<string[]>([]);
   const [searchResults, setSearchResults] = useState<string[]>([]);
   const [input, setInput] = useState<string>("");
@@ -23,14 +23,20 @@ function App() {
     setSearchResults(results);
   }, []);
 
+  const handleClickWord = (word: string) => {
+    setOpen(!open);
+    setHistory(word);
+  }
+  
+  console.log(history)
+
   return (
     <main>
       <SideBar
         open={open}
         setOpen={setOpen}
         searchWord={searchWord}
-        history={history}
-        setHistory={setHistory}
+        handleClickWord={handleClickWord}
       />
       <MainComponent
         open={open}
@@ -40,6 +46,7 @@ function App() {
         searchResults={searchResults}
         setSearchResults={setSearchResults}
         history={history}
+        setHistory={setHistory}
       />
     </main>
   );

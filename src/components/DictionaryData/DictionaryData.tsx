@@ -13,6 +13,8 @@ type Props = {
   setSearchWord: (searchWord: string[]) => void;
   searchResults: string[];
   setSearchResults: (searchResults: string[]) => void;
+  history: string;
+  setHistory: (history: string) => void;
 };
 
 export default function DictionaryData({
@@ -21,6 +23,7 @@ export default function DictionaryData({
   setSearchWord,
   searchResults,
   setSearchResults,
+  history,
 }: Props) {
   const [data, setData] = useState<any[]>([]);
   const [error, setError] = useState<string>();
@@ -80,8 +83,11 @@ export default function DictionaryData({
 
   return (
     <>
-      <Definitions data={data} />
-      <SavedResults results={searchResults} />
+      {history ? (
+        <SavedResults savedResults={searchResults} history={history} />
+      ) : (
+        <Definitions data={data} />
+      )}
     </>
   );
 }

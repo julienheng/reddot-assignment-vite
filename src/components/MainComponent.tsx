@@ -13,6 +13,8 @@ type Props = {
   setInput: (input: string) => void;
   searchResults: string[];
   setSearchResults: (searchResults: string[]) => void;
+  history: string;
+  setHistory: (history: string) => void;
 };
 
 export default function MainComponent({
@@ -22,6 +24,8 @@ export default function MainComponent({
   setSearchWord,
   searchResults,
   setSearchResults,
+  history,
+  setHistory,
 }: Props) {
   const [debouncedInput, setDebouncedInput] = useState<string>("");
 
@@ -45,6 +49,8 @@ export default function MainComponent({
         setSearchWord={setSearchWord}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        history={history}
+        setHistory={setHistory}
       />
     </div>
   );
