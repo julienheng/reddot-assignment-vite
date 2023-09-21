@@ -13,7 +13,16 @@ export default function Definitions({ data }: Props) {
         {data.map((item: any, index: number) => (
           <div key={index}>
             {item.meanings.map((meaning: any, meaningIndex: number) => (
-              <div className={styles.definition} key={meaningIndex}>
+              <div
+                className={`${styles.definition} ${
+                  meaning.partOfSpeech === "noun"
+                    ? styles.noun
+                    : meaning.partOfSpeech === "verb"
+                    ? styles.verb
+                    : styles.interjection
+                }`}
+                key={meaningIndex}
+              >
                 <h4>{meaning.partOfSpeech}</h4>
                 <div>
                   <p>{meaning.definitions[0].definition}</p>

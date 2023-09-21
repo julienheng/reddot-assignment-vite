@@ -5,3 +5,23 @@
 .example {
   font-style: italic;
 }
+
+.noun {
+  background-color: #D2F2D4;
+  border-radius: 5px;
+  padding: 10px
+}
+
+.verb {
+  background-color: #F0C4C3;
+  border-radius: 5px;
+  padding: 10px
+
+}
+
+.interjection {
+  background-color: #F3C294;
+  border-radius: 5px;
+  padding: 10px
+}
+

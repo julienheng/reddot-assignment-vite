@@ -54,17 +54,11 @@ export default function DictionaryData({ input, setInput }: Props) {
 
   return (
     <div className={styles.card}>
-      {/* {data ? (
-        <> */}
       <div className={styles.header}>
         <h2 className={styles.word}>{data[0].word}</h2>
         <div className={styles.phonetic}>{data[0].phonetic}</div>
       </div>
       <Definitions data={data} />
-      {/* </>
-      ) : (
-        <div>No data available.</div>
-      )} */}
     </div>
   );
 }
