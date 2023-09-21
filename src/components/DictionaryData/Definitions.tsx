@@ -21,34 +21,39 @@ export default function Definitions({ data }: Props) {
   };
 
   return (
-    <div className={styles.card}>
-      <h3>Definitions:</h3>
-      <div>
-        {data.map((item: any, index: number) => (
-          <div key={index}>
-            {item.meanings.map((meaning: any, meaningIndex: number) => {
+    <>
+      <div className={styles.card}>
+        <div>
+          <h2 className={styles.word}>{data[0].word}</h2>
+          <div className={styles.phonetic}>{data[0].phonetic}</div>
+        </div>
+        <h3>Definitions:</h3>
+        <div>
+          {data.map((item: any, index: number) => (
+            <div key={index}>
+              {item.meanings.map((meaning: any, meaningIndex: number) => {
+                const partOfSpeech = meaning.partOfSpeech;
+                const cssClass = getPartOfSpeechClass(partOfSpeech);
 
-              const partOfSpeech = meaning.partOfSpeech;
-              const cssClass = getPartOfSpeechClass(partOfSpeech);
-
-              return (
-                <div
-                  className={`${styles.definitionwrapper} ${cssClass}`}
-                  key={meaningIndex}
-                >
-                  <h4>{partOfSpeech}</h4>
-                  <div className={styles.definition}>
-                    <p>{meaning.definitions[0].definition}</p>
-                    <p className={styles.example}>
-                      {meaning.definitions[0].example}
-                    </p>
+                return (
+                  <div
+                    className={`${styles.definitionwrapper} ${cssClass}`}
+                    key={meaningIndex}
+                  >
+                    <h4>{partOfSpeech}</h4>
+                    <div className={styles.definition}>
+                      <p>{meaning.definitions[0].definition}</p>
+                      <p className={styles.example}>
+                        {meaning.definitions[0].example}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        ))}
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -80,13 +80,7 @@ export default function DictionaryData({
 
   return (
     <>
-      <div className={styles.card}>
-        <div>
-          <h2 className={styles.word}>{data[0].word}</h2>
-          <div className={styles.phonetic}>{data[0].phonetic}</div>
-        </div>
-        <Definitions data={data} />
-      </div>
+      <Definitions data={data} />
       <SavedResults results={searchResults} />
     </>
   );

@@ -8,6 +8,7 @@ import MainComponent from "./components/MainComponent";
 
 function App() {
   const [open, setOpen] = useState<boolean>(true);
+  const [history, setHistory] = useState<boolean>(false); // ["hello", "world"
   const [searchWord, setSearchWord] = useState<string[]>([]);
   const [searchResults, setSearchResults] = useState<string[]>([]);
   const [input, setInput] = useState<string>("");
@@ -28,7 +29,8 @@ function App() {
         open={open}
         setOpen={setOpen}
         searchWord={searchWord}
-        setInput={setInput}
+        history={history}
+        setHistory={setHistory}
       />
       <MainComponent
         open={open}
@@ -37,6 +39,7 @@ function App() {
         setInput={setInput}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        history={history}
       />
     </main>
   );
