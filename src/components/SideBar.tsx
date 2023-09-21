@@ -13,7 +13,6 @@ export default function SideBar({
   open,
   setOpen,
   searchWord,
-  
   handleClickWord
 }: Props) {
 

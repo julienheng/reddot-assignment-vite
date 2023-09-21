@@ -32,7 +32,7 @@ export default function MainComponent({
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       setDebouncedInput(input);
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(delayDebounceFn);
   }, [input]);

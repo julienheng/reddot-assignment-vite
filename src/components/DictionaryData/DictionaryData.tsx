@@ -57,9 +57,15 @@ export default function DictionaryData({
       fetchData();
 
       // Save search word to localStorage
-      const word = JSON.parse(localStorage.getItem("searchWord") || "[]");
+      // const word = JSON.parse(localStorage.getItem("searchWord") || "[]");
+      // word.push(input);
+      // localStorage.setItem("searchWord", JSON.stringify(word));
+      // setSearchWord(word);
+
+      // Save search word to localStorage
+      const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
       word.push(input);
-      localStorage.setItem("searchWord", JSON.stringify(word));
+      sessionStorage.setItem("searchWord", JSON.stringify(word));
       setSearchWord(word);
     }
   }, [input, setInput, setSearchWord]);
@@ -67,10 +73,9 @@ export default function DictionaryData({
   useEffect(() => {
     if (data && data.length > 0) {
       // Update searchResults when data is available
-      const results = JSON.parse(localStorage.getItem("searchResults") || "[]");
+      const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
       results.unshift(data);
-      localStorage.setItem("searchResults", JSON.stringify(results));
-      console.log(results);
+      sessionStorage.setItem("searchResults", JSON.stringify(results));
       setSearchResults(results);
     }
   }, [data, setSearchResults]);
