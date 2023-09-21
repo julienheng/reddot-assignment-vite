@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { useState, useEffect } from "react";
 import styles from "./dictionarydata.module.css";
 
@@ -57,12 +57,6 @@ export default function DictionaryData({
       fetchData();
 
       // Save search word to localStorage
-      // const word = JSON.parse(localStorage.getItem("searchWord") || "[]");
-      // word.push(input);
-      // localStorage.setItem("searchWord", JSON.stringify(word));
-      // setSearchWord(word);
-
-      // Save search word to localStorage
       const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
       word.push(input);
       sessionStorage.setItem("searchWord", JSON.stringify(word));
@@ -73,7 +67,9 @@ export default function DictionaryData({
   useEffect(() => {
     if (data && data.length > 0) {
       // Update searchResults when data is available
-      const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
+      const results = JSON.parse(
+        sessionStorage.getItem("searchResults") || "[]"
+      );
       results.unshift(data);
       sessionStorage.setItem("searchResults", JSON.stringify(results));
       setSearchResults(results);

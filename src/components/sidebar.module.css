@@ -5,7 +5,8 @@
   transition: 0.3s ease-in-out;
   z-index: 100;
   position: fixed;
-  background-color: #3D3832
+  background-color: #3D3832;
+  width: 20%
 }
 
 .open {

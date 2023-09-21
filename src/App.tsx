@@ -6,7 +6,10 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
 
+
+
 function App() {
+
   const [open, setOpen] = useState<boolean>(true);
   const [history, setHistory] = useState<string>("");
   const [searchWord, setSearchWord] = useState<string[]>([]);
@@ -30,12 +33,7 @@ function App() {
 
   return (
     <main>
-      <SideBar
-        open={open}
-        setOpen={setOpen}
-        searchWord={searchWord}
-        handleClickWord={handleClickWord}
-      />
+      <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
       <MainComponent
         open={open}
         setSearchWord={setSearchWord}
