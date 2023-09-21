@@ -54,7 +54,7 @@ export default function DictionaryData({ input, setInput }: Props) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
+      <div>
         <h2 className={styles.word}>{data[0].word}</h2>
         <div className={styles.phonetic}>{data[0].phonetic}</div>
       </div>

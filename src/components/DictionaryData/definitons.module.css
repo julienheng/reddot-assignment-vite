@@ -1,3 +1,7 @@
+.card {
+  margin-top: 20px;
+}
+
 .definition {
   margin: 12px 0;
 }
@@ -12,15 +16,22 @@
   padding: 10px
 }
 
+.adjective {
+  background-color: #DBEBF6;
+  border-radius: 5px;
+  padding: 10px
+
+}
+
 .verb {
-  background-color: #F0C4C3;
+  background-color: #F4C6C6;
   border-radius: 5px;
   padding: 10px
 
 }
 
 .interjection {
-  background-color: #F3C294;
+  background-color: #F5E0C6;
   border-radius: 5px;
   padding: 10px
 }
