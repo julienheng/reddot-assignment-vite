@@ -12,7 +12,7 @@ export default function InputBar({ input, setInput }: Props) {
     <div>
       <h1 className={styles.heading}>English API Dictionary</h1>
 
-      <div  className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <CiSearch className={styles.icon} />
         <input
           type="text"

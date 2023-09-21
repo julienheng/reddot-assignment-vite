@@ -12,6 +12,13 @@
   margin: 20px 0;
 }
 
+.error {
+  color: red;
+  font-size: 1rem;
+  font-weight: semi-bold;
+  text-align: center;
+}
+
 .card {
   padding: 20px;
   border-radius: 8px;

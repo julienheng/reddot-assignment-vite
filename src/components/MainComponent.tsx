@@ -11,8 +11,9 @@ type Props = {
 
 export default function MainComponent({ open }: Props) {
   
-  const [input, setInput] = useState<string>("");
+  const [input, setInput] = useState<string>("hello");
   const [debouncedInput, setDebouncedInput] = useState<string>("");
+  // const [history, setHistory] = useState<string[]>([]);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
@@ -26,7 +27,7 @@ export default function MainComponent({ open }: Props) {
     <div className={`${styles.maincomponent} ${!open && styles.blur}`}>
       <div className={styles.component}>
         <SearchBar input={input} setInput={setInput} />
-        <DictionaryData input={debouncedInput} />
+        <DictionaryData input={debouncedInput} setInput={setInput} />
       </div>
     </div>
   );
