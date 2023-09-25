@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./maincomponent.module.css";
 import { useState } from "react";
 
@@ -27,8 +26,8 @@ export default function MainComponent({
   savedResults,
   setSavedResults,
 }: Props) {
-  const [data, setData] = useState<any[]>([]);
-  const [error, setError] = useState<string>();
+  const [data, setData] = useState<object[]>([]);
+  const [error, setError] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,12 +47,14 @@ export default function MainComponent({
 
         // Update the saved results state and save it to localStorage
         setSavedResults(Array.from(new Set([result, ...savedResults])));
+        console.log(response.status);
       } else {
         if (response.status === 404) {
           setError(
             "Sorry, we couldn't find definitions for the word you are looking for. Please try again!"
           );
           setData([]);
+          setHistory("");
         }
       }
     } catch (error) {
@@ -63,8 +64,6 @@ export default function MainComponent({
       console.error("Error fetching data:", error);
     }
   };
-
-  console.log(data);
 
   return (
     <div className={styles.maincomponent}>
@@ -76,14 +75,14 @@ export default function MainComponent({
           handleSubmit={handleSubmit}
         />
 
-        {data && data.length > 0 || history ? (
+        {(data && data.length > 0) || history ? (
           <DictionaryData
             data={data}
             savedResults={savedResults}
             history={history}
           />
         ) : (
-          error && <p>{error}</p>
+          <p>{error}</p>
         )}
       </div>
     </div>

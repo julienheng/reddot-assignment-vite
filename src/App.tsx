@@ -14,12 +14,9 @@ function App() {
   const [history, setHistory] = useState<string>(initialHistory);
 
   const handleClickWord = (word: string) => {
-    console.log("Clicked word:", word);
     setHistory(word);
     sessionStorage.setItem("history", word);
   };
-
-  console.log("history:", history);
 
   return (
     <main>
