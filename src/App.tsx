@@ -6,26 +6,15 @@ import "./App.css";
 // COMPONENTS
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
+import useLocalStorage from "./../utils/useLocalStorage";
 
 function App() {
-  const [open, setOpen] = useState<boolean>(true);
   const [history, setHistory] = useState<string>("");
-  const [searchWord, setSearchWord] = useState<string[]>([]);
-  const [searchResults, setSearchResults] = useState<string[]>([]);
+  const [searchWord, setSearchWord] = useLocalStorage("searchWord", []);
+  const [savedResults, setSavedResults] = useLocalStorage("savedResults", []);
   const [input, setInput] = useState<string>("");
 
-  useEffect(() => {
-    const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
-    setSearchWord(word);
-  }, [setSearchWord]);
-
-  useEffect(() => {
-    const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
-    setSearchResults(results);
-  }, [setSearchResults]);
-
   const handleClickWord = (word: string) => {
-    setOpen(!open);
     setHistory(word);
   };
 
@@ -33,12 +22,12 @@ function App() {
     <main>
       <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
       <MainComponent
-        open={open}
+        searchWord={searchWord}
         setSearchWord={setSearchWord}
         input={input}
         setInput={setInput}
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
+        savedResults={savedResults}
+        setSavedResults={setSavedResults}
         history={history}
         setHistory={setHistory}
       />
@@ -47,3 +36,13 @@ function App() {
 }
 
 export default App;
+
+// useEffect(() => {
+//   const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
+//   setSearchWord(word);
+// }, []);
+
+// useEffect(() => {
+//   const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
+//   setSearchResults(results);
+// }, []);

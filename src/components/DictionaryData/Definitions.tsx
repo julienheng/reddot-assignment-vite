@@ -2,7 +2,7 @@
 import styles from "./definitions.module.css";
 
 type Props = {
-  data: any;
+  data: any[];
 };
 
 export default function Definitions({ data }: Props) {

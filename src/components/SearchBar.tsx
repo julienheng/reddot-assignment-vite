@@ -4,11 +4,12 @@ import { CiSearch } from "react-icons/ci";
 type Props = {
   input: string;
   setInput: (input: string) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 };
 
-export default function InputBar({ input, setInput }: Props) {
+export default function InputBar({ input, setInput, handleSubmit }: Props) {
   return (
-    <div className={styles.wrapper}>
+    <form onSubmit={handleSubmit} className={styles.wrapper}>
       <CiSearch className={styles.icon} />
       <input
         type="text"
@@ -17,6 +18,6 @@ export default function InputBar({ input, setInput }: Props) {
         placeholder="ENTER YOUR SEARCH WORD ..."
         className={styles.input}
       />
-    </div>
+    </form>
   );
 }

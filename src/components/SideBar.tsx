@@ -6,17 +6,18 @@ type Props = {
   handleClickWord: (word: string) => void;
 };
 
-export default function SideBar({
-  searchWord,
-  handleClickWord,
-}: Props) {
+export default function SideBar({ searchWord, handleClickWord }: Props) {
   return (
     <div className={styles.sidebar}>
-      <div className={styles.content}>
+      <div>
         <h2>Search History</h2>
-        <div className="">
-          {searchWord.map((word: any, index: number) => (
-            <p key={index} className={styles.word} onClick={() => handleClickWord(word)}>
+        <div className={styles.content}>
+          {searchWord.map((word: string, index: number) => (
+            <p
+              key={index}
+              className={styles.word}
+              onClick={() => handleClickWord(word)}
+            >
               {word}
             </p>
           ))}
@@ -25,7 +26,9 @@ export default function SideBar({
     </div>
   );
 }
-{/* <BsArrowLeftCircle
+{
+  /* <BsArrowLeftCircle
   className={`${styles.arrow} ${open && styles.rotate}`}
   onClick={() => setOpen(!open)}
-/> */}
+/> */
+}
