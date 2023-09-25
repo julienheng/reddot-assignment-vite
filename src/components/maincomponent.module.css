@@ -31,3 +31,9 @@
   font-size: 3rem;
 }
 
+.error {
+  color: red;
+  font-size: 1.25rem;
+  font-family: "lato", serif;
+}
+

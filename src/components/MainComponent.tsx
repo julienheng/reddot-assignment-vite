@@ -42,10 +42,10 @@ export default function MainComponent({
         setInput("");
         setHistory(input);
 
-        // Update the search word state and save it to localStorage
+        // UPDATE SEARCH WORD & SAVE TO SESSION STORAGE
         setSearchWord(Array.from(new Set([input, ...searchWord])));
 
-        // Update the saved results state and save it to localStorage
+        // UPDATE SEARCH RESULTS & SAVE TO SESSION STORAGE
         setSavedResults(Array.from(new Set([result, ...savedResults])));
         console.log(response.status);
       } else {
@@ -82,7 +82,7 @@ export default function MainComponent({
             history={history}
           />
         ) : (
-          <p>{error}</p>
+          <p className={styles.error}>{error}</p>
         )}
       </div>
     </div>
