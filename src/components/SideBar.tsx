@@ -10,7 +10,7 @@ export default function SideBar({ searchWord, handleClickWord }: Props) {
   return (
     <div className={styles.sidebar}>
       <div>
-        <h2>Search History</h2>
+        <h2 className={styles.title}>Search History</h2>
         <div className={styles.content}>
           {searchWord.map((word: string, index: number) => (
             <p

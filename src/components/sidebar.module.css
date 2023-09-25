@@ -44,4 +44,13 @@
 
 .word {
   cursor: pointer;
+  font-family: "lato", serif;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: "DM Serif Display", serif;
+  margin-bottom: 20px;
 }
