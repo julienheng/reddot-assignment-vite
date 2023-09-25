@@ -20,7 +20,7 @@ function App() {
 
   return (
     <main>
-      <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
+      {/* <SideBar searchWord={searchWord} handleClickWord={handleClickWord} /> */}
       <MainComponent
         searchWord={searchWord}
         setSearchWord={setSearchWord}

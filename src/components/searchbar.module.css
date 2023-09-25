@@ -31,3 +31,9 @@
 h1 {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}

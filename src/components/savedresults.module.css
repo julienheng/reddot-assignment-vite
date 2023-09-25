@@ -9,8 +9,6 @@
   background-color: white
 }
 
-
-
 .definitionwrapper {
   margin: 12px 0;
 }
@@ -64,3 +62,9 @@ h4 {
   font-style: italic;
 }
 
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
