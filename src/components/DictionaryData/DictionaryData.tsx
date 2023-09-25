@@ -10,7 +10,6 @@ type Props = {
   data: any[];
   history: string;
 };
-//   searchWord: string[];
 
 export default function DictionaryData({ data, savedResults, history }: Props) {
   return (

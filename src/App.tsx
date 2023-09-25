@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 // COMPONENTS
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
-import useLocalStorage from "./../utils/useLocalStorage";
+import useSessionStorage from "../utils/useSessionStorage";
 
 function App() {
   const [history, setHistory] = useState<string>("");
-  const [searchWord, setSearchWord] = useLocalStorage("searchWord", []);
-  const [savedResults, setSavedResults] = useLocalStorage("savedResults", []);
+  const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
+  const [savedResults, setSavedResults] = useSessionStorage("savedResults", []);
   const [input, setInput] = useState<string>("");
 
   const handleClickWord = (word: string) => {
