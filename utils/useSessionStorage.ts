@@ -6,7 +6,9 @@ const useSessionStorage = (key: string, initialValue: string[]) => {
 
     try {
       const item = sessionStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
+      const parsedValue = item ? JSON.parse(item) : initialValue;
+      return parsedValue;
+
     } catch (error) {
       console.log(error);
       return initialValue;

@@ -65,8 +65,6 @@ export default function MainComponent({
   };
 
   console.log(data);
-  console.log(searchWord);
-  console.log(savedResults);
 
   return (
     <div className={styles.maincomponent}>
@@ -78,7 +76,7 @@ export default function MainComponent({
           handleSubmit={handleSubmit}
         />
 
-        {data && data.length > 0 ? (
+        {data && data.length > 0 || history ? (
           <DictionaryData
             data={data}
             savedResults={savedResults}

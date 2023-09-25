@@ -14,7 +14,7 @@ export default function InputBar({ input, setInput, handleSubmit }: Props) {
       <input
         type="text"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => setInput(e.target.value.toLowerCase())}
         placeholder="ENTER YOUR SEARCH WORD ..."
         className={styles.input}
       />

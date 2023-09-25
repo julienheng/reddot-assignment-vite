@@ -22,12 +22,9 @@ export default function SavedResults({ savedResults, history }: Props) {
     }
   };
 
-  console.log(savedResults);
-
   const filtered = savedResults.find((wordData: any) =>
     wordData.some((item: any) => item.word === history)
   );
-  console.log(filtered);
 
   return (
     <div className={styles.card}>
