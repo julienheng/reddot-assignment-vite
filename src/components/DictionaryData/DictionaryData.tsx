@@ -25,7 +25,7 @@ export default function DictionaryData({
   setSearchResults,
   history,
 }: Props) {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<string[]>([]);
   const [error, setError] = useState<string>();
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function DictionaryData({
       sessionStorage.setItem("searchResults", JSON.stringify(results));
       setSearchResults(results);
     }
-  }, [data, setSearchResults]);
+  }, [data, setSearchResults, searchResults]);
 
   if (error) return <div className={styles.error}>{error}</div>;
 

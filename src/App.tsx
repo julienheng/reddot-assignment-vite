@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect } from "react";
 import "./App.css";
@@ -6,10 +7,7 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
 
-
-
 function App() {
-
   const [open, setOpen] = useState<boolean>(true);
   const [history, setHistory] = useState<string>("");
   const [searchWord, setSearchWord] = useState<string[]>([]);
@@ -19,12 +17,12 @@ function App() {
   useEffect(() => {
     const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
     setSearchWord(word);
-  }, []);
+  }, [setSearchWord]);
 
   useEffect(() => {
     const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
     setSearchResults(results);
-  }, []);
+  }, [setSearchResults]);
 
   const handleClickWord = (word: string) => {
     setOpen(!open);

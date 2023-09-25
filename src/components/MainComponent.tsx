@@ -2,6 +2,7 @@
 import styles from "./maincomponent.module.css";
 import { useState, useEffect } from "react";
 
+
 //COMPONENTS
 import SearchBar from "./SearchBar";
 import DictionaryData from "./DictionaryData/DictionaryData";
@@ -38,7 +39,7 @@ export default function MainComponent({
   }, [input]);
 
   return (
-    <div className={`${styles.maincomponent} ${!open && styles.blur}`}>
+    <div className={styles.maincomponent}>
       <div className={styles.component}>
         <h1 className={styles.heading}>English API Dictionary</h1>
         <SearchBar input={input} setInput={setInput} />

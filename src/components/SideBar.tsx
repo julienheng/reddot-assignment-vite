@@ -11,13 +11,12 @@ export default function SideBar({
   handleClickWord,
 }: Props) {
   return (
-    // <div className={`${styles.sidebar} ${open ? styles.open : styles.closed}`}>
     <div className={styles.sidebar}>
       <div className={styles.content}>
         <h2>Search History</h2>
-        <div>
+        <div className="">
           {searchWord.map((word: any, index: number) => (
-            <p key={index} onClick={() => handleClickWord(word)}>
+            <p key={index} className={styles.word} onClick={() => handleClickWord(word)}>
               {word}
             </p>
           ))}
