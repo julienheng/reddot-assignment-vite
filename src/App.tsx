@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import "./App.css";
 
@@ -12,11 +10,13 @@ function App() {
   const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
   const [savedResults, setSavedResults] = useSessionStorage("savedResults", []);
   const [input, setInput] = useState<string>("");
-  const [history, setHistory] = useState<string>(searchWord[0] || "");
+  const initialHistory = sessionStorage.getItem("history") || "";
+  const [history, setHistory] = useState<string>(initialHistory);
 
   const handleClickWord = (word: string) => {
     console.log("Clicked word:", word);
     setHistory(word);
+    sessionStorage.setItem("history", word);
   };
 
   console.log("history:", history);
