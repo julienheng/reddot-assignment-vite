@@ -32,8 +32,8 @@ export default function SavedResults({ savedResults, history }: Props) {
   return (
     <div className={styles.card}>
       <div>
-        <h2>{filtered[0]?.word}</h2>
-        <div>{filtered[0]?.phonetic}</div>
+        <h2 className={styles.word}>{filtered[0]?.word}</h2>
+        <div className={styles.phonetic}>{filtered[0]?.phonetic}</div>
       </div>
 
       <h3>Definitions:</h3>

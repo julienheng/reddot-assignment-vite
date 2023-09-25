@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./maincomponent.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 //COMPONENTS
 import SearchBar from "./SearchBar";
@@ -22,6 +22,7 @@ export default function MainComponent({
   setInput,
   setSearchWord,
   searchWord,
+  history,
   savedResults,
   setSavedResults,
 }: Props) {
@@ -46,13 +47,15 @@ export default function MainComponent({
         // Update the saved results state and save it to localStorage
         setSavedResults([...savedResults, result]);
       } else {
-        setError(
-          "Sorry, we couldn't find definitions for the word you were looking for. Please refresh and try again."
-        );
+        if (response.status === 404) {
+          setError(
+            "Sorry, we couldn't find definitions for the word you were looking for. Please try again."
+          );
+        }
       }
     } catch (error) {
       setError(
-        "Sorry, we couldn't find definitions for the word you were looking for. Please refresh and try again."
+        "Sorry, we couldn't find definitions for the word you were looking for. Please try again."
       );
       console.error("Error fetching data:", error);
     }
@@ -74,12 +77,12 @@ export default function MainComponent({
         {data && data.length > 0 ? (
           <DictionaryData
             data={data}
-            // savedResults={savedResults}
+            savedResults={savedResults}
+            history={history}
           />
         ) : (
-          <p>What word are you looking for?</p>
+          error && <p>{error}</p>
         )}
-        <p>{error}</p>
       </div>
     </div>
   );

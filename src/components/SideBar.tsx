@@ -26,9 +26,3 @@ export default function SideBar({ searchWord, handleClickWord }: Props) {
     </div>
   );
 }
-{
-  /* <BsArrowLeftCircle
-  className={`${styles.arrow} ${open && styles.rotate}`}
-  onClick={() => setOpen(!open)}
-/> */
-}

@@ -36,13 +36,3 @@ function App() {
 }
 
 export default App;
-
-// useEffect(() => {
-//   const word = JSON.parse(sessionStorage.getItem("searchWord") || "[]");
-//   setSearchWord(word);
-// }, []);
-
-// useEffect(() => {
-//   const results = JSON.parse(sessionStorage.getItem("searchResults") || "[]");
-//   setSearchResults(results);
-// }, []);
