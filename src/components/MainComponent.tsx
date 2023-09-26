@@ -2,7 +2,7 @@ import styles from "./maincomponent.module.css";
 import { useState } from "react";
 
 //COMPONENTS
-import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar/SearchBar";
 import DictionaryData from "./DictionaryData/DictionaryData";
 
 type Props = {
