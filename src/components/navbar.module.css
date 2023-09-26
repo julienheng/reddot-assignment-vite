@@ -1,0 +1,65 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  background: #343541;
+}
+
+.navwrapper {
+  display: inline-flex;
+  height: 3rem;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.innerwrapper {
+  width: 15rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  height: 100vh;
+  background: #343541;
+  padding: 1rem 1rem;
+  color: white;
+  animation: slideIn 0.3s ease-in-out;
+  animation-fill-mode: backwards;
+}
+
+
+.iconclose {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 600px) {
+  .navbar {
+    display: none;
+  }
+
+  .innerwrapper {
+    display: none;
+  }
+}

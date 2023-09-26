@@ -5,6 +5,7 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
 import useSessionStorage from "../utils/useSessionStorage";
+import NavBar from "./components/NavBar"; 
 
 function App() {
   const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
@@ -21,6 +22,7 @@ function App() {
   return (
     <main>
       {/* <SideBar searchWord={searchWord} handleClickWord={handleClickWord} /> */}
+      <NavBar />
       <MainComponent
         searchWord={searchWord}
         setSearchWord={setSearchWord}
