@@ -27,6 +27,8 @@
 .heading {
   font-family: "DM Serif Display", serif;
   font-size: 3rem;
+  text-transform: uppercase;
+  width: 100%
 }
 
 .error {
@@ -43,12 +45,11 @@
   .heading {
     font-size: 2rem;
   }
-  .maincomponent{
-    padding-top: 75px
+  .maincomponent {
+    padding-top: 75px;
   }
   .error {
     font-size: 1rem;
-    text-align: center
+    text-align: center;
   }
 }
-
