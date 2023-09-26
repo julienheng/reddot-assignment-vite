@@ -2,11 +2,16 @@
 import styles from "./sidebar.module.css";
 
 type Props = {
+  activeWord: string;
   searchWord: string[];
   handleClickWord: (word: string) => void;
 };
 
-export default function SideBar({ searchWord, handleClickWord }: Props) {
+export default function SideBar({
+  activeWord,
+  searchWord,
+  handleClickWord,
+}: Props) {
   return (
     <div className={styles.sidebar}>
       <div>
@@ -15,7 +20,9 @@ export default function SideBar({ searchWord, handleClickWord }: Props) {
           {searchWord.map((word: string, index: number) => (
             <p
               key={index}
-              className={styles.word}
+              className={`${styles.word} ${
+                activeWord === word ? styles.active : ""
+              }`}
               onClick={() => handleClickWord(word)}
             >
               {word}

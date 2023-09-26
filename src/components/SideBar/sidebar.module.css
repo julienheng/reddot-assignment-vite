@@ -25,20 +25,23 @@
 }
 
 .content {
-  padding: 20px;
   color: white;
   text-align: center;
-  border: 1px dashed white;
-  background-color: gray;
-  border-radius: 10px;
-  margin: 0px 25px;
+  border-radius: 8px;
+  padding: 0 30px;
 }
 
 .word {
   cursor: pointer;
   font-family: "lato", serif;
   font-size: 1.5rem;
-  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.active {
+  background-color: gray;
+  border-radius: 5px;
+  
 }
 
 .title {

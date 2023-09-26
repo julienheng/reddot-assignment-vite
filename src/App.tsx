@@ -14,16 +14,22 @@ function App() {
   const initialHistory = sessionStorage.getItem("history") || "";
   const [history, setHistory] = useState<string>(initialHistory);
   const [nav, setNav] = useState<boolean>(false);
+  const [activeWord, setActiveWord] = useState<string>("");
 
   const handleClickWord = (word: string) => {
     setHistory(word);
     sessionStorage.setItem("history", word);
+    setActiveWord(word);
   };
 
   return (
     <main>
       {/* SIDE BAR FOR DESKTOP */}
-      <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
+      <SideBar
+        searchWord={searchWord}
+        handleClickWord={handleClickWord}
+        activeWord={activeWord}
+      />
 
       {/*  SIDE BAR FOR MOBILE */}
       <NavBar
@@ -31,6 +37,7 @@ function App() {
         handleClickWord={handleClickWord}
         nav={nav}
         setNav={setNav}
+        activeWord={activeWord}
       />
 
       {/* MAIN COMPONENT */}

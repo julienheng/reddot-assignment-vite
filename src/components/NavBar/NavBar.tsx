@@ -4,13 +4,15 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import styles from "./navbar.module.css";
 
 type Props = {
-  searchWord: string[];
-  handleClickWord: (word: string) => void;
   nav: boolean;
+  activeWord: string;
+  searchWord: string[];
   setNav: (nav: boolean) => void;
+  handleClickWord: (word: string) => void;
 };
 
 export default function NavBar({
+  activeWord,
   searchWord,
   handleClickWord,
   nav,
@@ -43,7 +45,9 @@ export default function NavBar({
                 {searchWord.map((word: string, index: number) => (
                   <p
                     key={index}
-                    className={styles.word}
+                    className={`${styles.word} ${
+                      activeWord === word ? styles.active : ""
+                    }`}
                     onClick={() => handleClickWord(word)}
                   >
                     {word}
