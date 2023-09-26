@@ -18,24 +18,21 @@ A fixed side bar is opted for to display search word history. It offers immediat
 <br><br>
 **Component Styling:** Ensuring that the sidebar and other UI elements are styled appropriately and responsive across different screen sizes and devices.
 
-## Installation
+# Installation
 
-1. Clone the repository:
+### 1. Clone the repository:
 git clone https://github.com/julienheng/reddot-assignment-vite.git
 <br>
 cd reddot-assignment-vite
 
-2. Install depedencies:
-<br>
+### 2. Install depedencies:
 npm install or pnpm install
 
-## Running the Development Environment
+# Running the Development Environment
 
-1. Start the development server
-<br>
+### 1. Start the development server
 npm run dev or pnpm run dev
 
-2. Access the development environment in your web browser at
-<br>
+### 2. Access the development environment in your web browser at
 http://localhost:5173
 
