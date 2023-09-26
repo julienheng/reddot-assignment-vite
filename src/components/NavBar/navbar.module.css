@@ -25,18 +25,18 @@
   }
 }
 
-@keyframes slideOut {
+/* @keyframes slideOut {
   from {
     transform: translateX(0%);
   }
   to {
     transform: translateX(-100%);
   }
-}
+} */
 
-.out {
+/* .out {
   animation: slideOut 0.2s ease-in-out;
-}
+} */
 
 .innerwrapper {
   width: 15rem;
