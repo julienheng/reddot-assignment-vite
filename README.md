@@ -1,28 +1,38 @@
-# React + TypeScript + Vite
+# Project Design & Technology Choices
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This README provides insights into the design decisions, technologies used and challenge faced during the development of the project.
 
-Currently, two official plugins are available:
+### User Interface (UI) Design
+A fixed side bar is opted for to display search word history. It offers immediate visibility to users, making it easier for them to access their search word history without the need for additional interactions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technology Stack
+**Vite-React:** The project is built using Vite with React. Vite is chosen for its speed and lightweight development environment, making it easy to start and develop the project rapidly.
+<br>
 
-## Expanding the ESLint configuration
+**TypeScript:** TypeScript has been included in the technology stack to enhance type safety and prevent bugs. It provides static typing, which helps catch errors during development.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Challenges Faced
+**Session Storage:** Learning about sessionStorage for the first time and understanding how to use it effectively for data management ( storing, retrieving and updating history ) and data persistence during a user's session.
+<br><br>
+**Data from Fetch API:** Efficiently handling data obtained from the Fetch API, including parsing, storing, and displaying it to the user.
+<br><br>
+**Component Styling:** Ensuring that the sidebar and other UI elements are styled appropriately and responsive across different screen sizes and devices.
 
-- Configure the top-level `parserOptions` property like this:
+# Installation
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### 1. Clone the repository:
+git clone https://github.com/julienheng/reddot-assignment-vite.git
+<br>
+cd reddot-assignment-vite
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# reddot-assignment-vite
+### 2. Install depedencies:
+npm install or pnpm install
+
+# Running the Development Environment
+
+### 1. Start the development server
+npm run dev or pnpm run dev
+
+### 2. Access the development environment in your web browser at
+http://localhost:5173
+
