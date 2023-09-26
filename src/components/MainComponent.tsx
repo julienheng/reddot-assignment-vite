@@ -15,7 +15,6 @@ type Props = {
   history: string;
   setHistory: (history: string) => void;
   nav: boolean;
-  setNav: (nav: boolean) => void;
 };
 
 export default function MainComponent({
@@ -28,7 +27,6 @@ export default function MainComponent({
   savedResults,
   setSavedResults,
   nav,
-  setNav,
 }: Props) {
   const [data, setData] = useState<object[]>([]);
   const [error, setError] = useState<string>("");
@@ -70,7 +68,7 @@ export default function MainComponent({
   };
 
   return (
-    <div className={styles.maincomponent} onClick={() => setNav(!nav)}>
+    <div className={`${styles.maincomponent} ${nav && styles.blur}`}>
       <div className={styles.component}>
         <h1 className={styles.heading}>English API Dictionary</h1>
         <SearchBar

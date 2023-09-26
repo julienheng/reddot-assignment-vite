@@ -1,5 +1,4 @@
 .maincomponent {
-  border: 2px solid green;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -23,7 +22,6 @@
 
 .blur {
   filter: blur(3px);
-  /* filter: brightness(0.5); */
 }
 
 .heading {

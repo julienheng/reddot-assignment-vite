@@ -44,7 +44,6 @@ function App() {
         history={history}
         setHistory={setHistory}
         nav={nav}
-        setNav={setNav}
       />
     </main>
   );
