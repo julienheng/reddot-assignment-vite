@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./App.css";
 
 // COMPONENTS
-import SideBar from "./components/SideBar";
-import MainComponent from "./components/MainComponent";
+import SideBar from "./components/SideBar/SideBar";
+import MainComponent from "./components/MainComponent/MainComponent";
 import useSessionStorage from "../utils/useSessionStorage";
 import NavBar from "./components/NavBar/NavBar";
 

@@ -2,7 +2,7 @@
 
 // COMPONENTS
 import Definitions from "./Definitions";
-import SavedResults from "../SavedResults";
+import SavedResults from "../SavedResults/SavedResults";
 
 type Props = {
   savedResults: string[];
