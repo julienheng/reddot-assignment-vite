@@ -21,7 +21,6 @@ A fixed side bar is opted for to display search word history. It offers immediat
 ## Installation
 
 1. Clone the repository:
-<br>
 git clone https://github.com/julienheng/reddot-assignment-vite.git
 <br>
 cd reddot-assignment-vite
