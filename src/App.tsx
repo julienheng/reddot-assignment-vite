@@ -5,7 +5,7 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import MainComponent from "./components/MainComponent";
 import useSessionStorage from "../utils/useSessionStorage";
-import NavBar from "./components/NavBar"; 
+import NavBar from "./components/NavBar";
 
 function App() {
   const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
@@ -13,6 +13,7 @@ function App() {
   const [input, setInput] = useState<string>("");
   const initialHistory = sessionStorage.getItem("history") || "";
   const [history, setHistory] = useState<string>(initialHistory);
+  const [nav, setNav] = useState<boolean>(false);
 
   const handleClickWord = (word: string) => {
     setHistory(word);
@@ -21,8 +22,18 @@ function App() {
 
   return (
     <main>
+      {/* SIDE BAR FOR DESKTOP */}
       <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
-      <NavBar searchWord={searchWord} handleClickWord={handleClickWord} />
+
+      {/*  SIDE BAR FOR MOBILE */}
+      <NavBar
+        searchWord={searchWord}
+        handleClickWord={handleClickWord}
+        nav={nav}
+        setNav={setNav}
+      />
+
+      {/* MAIN COMPONENT */}
       <MainComponent
         searchWord={searchWord}
         setSearchWord={setSearchWord}
@@ -32,6 +43,8 @@ function App() {
         setSavedResults={setSavedResults}
         history={history}
         setHistory={setHistory}
+        nav={nav}
+        setNav={setNav}
       />
     </main>
   );

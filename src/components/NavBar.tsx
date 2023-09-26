@@ -7,11 +7,16 @@ import styles from "./navbar.module.css";
 type Props = {
   searchWord: string[];
   handleClickWord: (word: string) => void;
+  nav: boolean;
+  setNav: (nav: boolean) => void;
 };
 
-export default function NavBar({ searchWord, handleClickWord }: Props) {
-  const [nav, setNav] = useState<boolean>(false);
-
+export default function NavBar({
+  searchWord,
+  handleClickWord,
+  nav,
+  setNav,
+}: Props) {
   return (
     <>
       <div className={styles.navbar}>
@@ -27,11 +32,8 @@ export default function NavBar({ searchWord, handleClickWord }: Props) {
       </div>
 
       {nav && (
-        <nav
-          className={`${nav ? styles.innerwrapper : styles.out}`}
-          onClick={() => setNav(!nav)}
-        >
-          <div className={styles.iconclose}>
+        <nav className={`${nav ? styles.innerwrapper : styles.out}`}>
+          <div className={styles.iconclose} onClick={() => setNav(!nav)}>
             <AiOutlineClose size="25" color="#C3C3C3" />
           </div>
 
