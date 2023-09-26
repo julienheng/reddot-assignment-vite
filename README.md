@@ -12,9 +12,9 @@ A fixed side bar is opted for to display search word history. It offers immediat
 
 ### Challenges Faced
 **Session Storage:** Learning about sessionStorage for the first time and understanding how to use it effectively for data management ( storing, retrieving and updating history ) and data persistence during a user's session.
-<br>
+<br><br>
 **Data from Fetch API:** Efficiently handling data obtained from the Fetch API, including parsing, storing, and displaying it to the user.
-<br>
+<br><br>
 **Component Styling:** Ensuring that the sidebar and other UI elements are styled appropriately and responsive across different screen sizes and devices.
 
 ## Installation
