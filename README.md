@@ -8,6 +8,7 @@ A fixed side bar is opted for to display search word history. It offers immediat
 ### Technology Stack
 **Vite-React:** The project is built using Vite with React. Vite is chosen for its speed and lightweight development environment, making it easy to start and develop the project rapidly.
 <br>
+
 **TypeScript:** TypeScript has been included in the technology stack to enhance type safety and prevent bugs. It provides static typing, which helps catch errors during development.
 
 ### Challenges Faced
