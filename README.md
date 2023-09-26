@@ -21,17 +21,22 @@ A fixed side bar is opted for to display search word history. It offers immediat
 ## Installation
 
 1. Clone the repository:
+<br>
 git clone https://github.com/julienheng/reddot-assignment-vite.git
+<br>
 cd reddot-assignment-vite
 
 2. Install depedencies:
+<br>
 npm install or pnpm install
 
 ## Running the Development Environment
 
 1. Start the development server
+<br>
 npm run dev or pnpm run dev
 
 2. Access the development environment in your web browser at
+<br>
 http://localhost:5173
 
