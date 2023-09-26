@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import styles from "../components/sidebar.module.css";
+import styles from "./sidebar.module.css";
 
 type Props = {
   searchWord: string[];

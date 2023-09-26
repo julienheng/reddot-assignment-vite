@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import styles from "./savedresults.module.css";
+import styles from "./saved-results.module.css";
 
 type Props = {
   savedResults: any[];

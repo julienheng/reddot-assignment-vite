@@ -1,7 +1,5 @@
-
-
 // COMPONENTS
-import Definitions from "./Definitions";
+import Definitions from "../Definitions/Definitions";
 import SavedResults from "../SavedResults/SavedResults";
 
 type Props = {

@@ -1,4 +1,4 @@
-import styles from "./maincomponent.module.css";
+import styles from "./main-component.module.css";
 import { useState } from "react";
 
 //COMPONENTS
@@ -6,27 +6,27 @@ import SearchBar from "../SearchBar/SearchBar";
 import DictionaryData from "../DictionaryData/DictionaryData";
 
 type Props = {
-  setSearchWord: (searchWord: string[]) => void;
-  input: string;
-  setInput: (input: string) => void;
-  savedResults: string[];
-  searchWord: string[];
-  setSavedResults: (savedResults: string[]) => void;
-  history: string;
-  setHistory: (history: string) => void;
   nav: boolean;
+  input: string;
+  history: string;
+  searchWord: string[];
+  savedResults: string[];
+  setInput: (input: string) => void;
+  setHistory: (history: string) => void;
+  setSearchWord: (searchWord: string[]) => void;
+  setSavedResults: (savedResults: string[]) => void;
 };
 
 export default function MainComponent({
-  input,
-  setInput,
-  setSearchWord,
-  searchWord,
-  history,
-  setHistory,
-  savedResults,
-  setSavedResults,
   nav,
+  input,
+  history,
+  searchWord,
+  savedResults,
+  setInput,
+  setHistory,
+  setSearchWord,
+  setSavedResults,
 }: Props) {
   const [data, setData] = useState<object[]>([]);
   const [error, setError] = useState<string>("");
