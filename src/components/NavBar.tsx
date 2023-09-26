@@ -7,11 +7,6 @@ import styles from "./NavBar.module.css";
 export default function NavBar() {
   const [nav, setNav] = useState<boolean>(false);
 
-  // const handleSlideIn = () => {
-  //   setNav(!nav);
-  //   setSlide(!slide);
-  // };
-
   return (
     <>
       <div className={styles.navbar}>
@@ -27,7 +22,7 @@ export default function NavBar() {
       </div>
 
       {nav && (
-        <nav className={styles.innerwrapper} onClick={() => setNav(!nav)}>
+        <nav className={`${styles.innerwrapper}`} onClick={() => setNav(!nav)}>
           <div className={styles.iconclose}>
             <AiOutlineClose size="25" color="#C3C3C3" />
           </div>

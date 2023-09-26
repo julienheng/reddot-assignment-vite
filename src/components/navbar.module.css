@@ -21,13 +21,13 @@
     transform: translateX(-100%);
   }
   to {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
 }
 
 @keyframes slideOut {
   from {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   to {
     transform: translateX(-100%);
@@ -45,9 +45,7 @@
   padding: 1rem 1rem;
   color: white;
   animation: slideIn 0.3s ease-in-out;
-  animation-fill-mode: backwards;
 }
-
 
 .iconclose {
   display: flex;
