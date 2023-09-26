@@ -10,14 +10,6 @@
   padding: 30px 20px;
 }
 
-.open {
-  width: 5%;
-}
-
-.closed {
-  width: 25%;
-}
-
 .rotate {
   transform: rotate(180deg);
 }
@@ -53,4 +45,10 @@
   font-size: 2rem;
   font-family: "DM Serif Display", serif;
   margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 }

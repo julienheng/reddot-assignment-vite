@@ -4,7 +4,7 @@
   left: 0;
   z-index: 100;
   width: 100%;
-  background: #343541;
+  background: #3d3832;
 }
 
 .navwrapper {
@@ -34,22 +34,39 @@
   }
 }
 
+.out {
+  animation: slideOut 0.2s ease-in-out;
+}
+
 .innerwrapper {
   width: 15rem;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   height: 100vh;
-  background: #343541;
+  background: #3d3832;
   padding: 1rem 1rem;
   color: white;
-  animation: slideIn 0.3s ease-in-out;
+  animation: slideIn 0.3s linear;
 }
 
 .iconclose {
   display: flex;
   justify-content: flex-end;
+}
+
+.word {
+  cursor: pointer;
+  font-family: "lato", serif;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-family: "DM Serif Display", serif;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 600px) {

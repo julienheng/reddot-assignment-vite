@@ -42,5 +42,15 @@
     width: 100%;
     margin-left: 0;
   }
+  .heading {
+    font-size: 2rem;
+  }
+  .maincomponent{
+    padding-top: 75px
+  }
+  .error {
+    font-size: 1rem;
+    text-align: center
+  }
 }
 

@@ -21,8 +21,8 @@ function App() {
 
   return (
     <main>
-      {/* <SideBar searchWord={searchWord} handleClickWord={handleClickWord} /> */}
-      <NavBar />
+      <SideBar searchWord={searchWord} handleClickWord={handleClickWord} />
+      <NavBar searchWord={searchWord} handleClickWord={handleClickWord} />
       <MainComponent
         searchWord={searchWord}
         setSearchWord={setSearchWord}
