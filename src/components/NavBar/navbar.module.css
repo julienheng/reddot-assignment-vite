@@ -26,16 +26,33 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
+}
+
+.slideIn {
   animation-name: slideIn;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
+}
+
+.slideOut {
+  animation-name: slideOut;
+  animation-duration: 0.5s;
 }
 
 @keyframes slideIn {
   from {
-    margin-left: -100px;
+    margin-left: -100%;
   }
   100% {
-    margin-left: 0px;
+    margin-left: 0%;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: -100%;
   }
 }
 
