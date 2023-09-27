@@ -70,7 +70,7 @@ export default function MainComponent({
   return (
     <div className={`${styles.maincomponent} ${nav && styles.blur}`}>
       <div className={styles.component}>
-        <h1 className={styles.heading}>English Dictionary</h1>
+        <h1 className={styles.heading}>English API Dictionary</h1>
         <SearchBar
           input={input}
           setInput={setInput}
