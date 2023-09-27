@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import styles from "./WordOfDay.module.css";
+import styles from "./wordofday.module.css";
 
 type Props = {
   wordOfDay: any[];
