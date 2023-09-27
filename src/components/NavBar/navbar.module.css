@@ -38,6 +38,10 @@
   animation: slideOut 0.2s ease-in-out;
 } */
 
+.slideIn {
+  animation: slideIn 0.3s linear;
+}
+
 .innerwrapper {
   width: 15rem;
   position: fixed;
@@ -48,7 +52,6 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
-  animation: slideIn 0.3s linear;
 }
 
 .iconclose {
@@ -79,7 +82,7 @@
   font-size: 1.5rem;
   font-family: "DM Serif Display", serif;
   margin: 20px;
-  text-align: center
+  text-align: center;
 }
 
 @media (min-width: 600px) {

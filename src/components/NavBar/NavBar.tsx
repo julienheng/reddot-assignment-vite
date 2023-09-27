@@ -33,7 +33,7 @@ export default function NavBar({
       </div>
 
       {nav && (
-        <nav className={`${nav ? styles.innerwrapper : ""}`}>
+        <nav className={`${styles.innerwrapper} ${styles.slideIn}`}>
           <div className={styles.iconclose} onClick={() => setNav(!nav)}>
             <AiOutlineClose size="25" color="#C3C3C3" />
           </div>
