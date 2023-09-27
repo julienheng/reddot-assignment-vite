@@ -20,6 +20,7 @@ function App() {
     setHistory(word);
     sessionStorage.setItem("history", word);
     setActiveWord(word);
+    setNav(!nav);
   };
 
   return (
