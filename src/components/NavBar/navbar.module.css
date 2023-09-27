@@ -52,6 +52,7 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
+  animation: slideIn 0.3s linear;
 }
 
 .iconclose {
