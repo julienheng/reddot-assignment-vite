@@ -17,6 +17,8 @@
   width: 100%;
   margin-left: 15px;
   font-family: "lato", serif;
+  border: 1px solid red;
+  
 }
 
 .input:focus {
