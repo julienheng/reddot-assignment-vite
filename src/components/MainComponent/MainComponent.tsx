@@ -1,14 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./main-component.module.css";
 import { useState } from "react";
 
 //COMPONENTS
 import SearchBar from "../SearchBar/SearchBar";
 import DictionaryData from "../DictionaryData/DictionaryData";
+import WordOfDay from "../WordOfDay/WordOfDay";
 
 type Props = {
   nav: boolean;
   input: string;
   history: string;
+  wordOfDay: any[];
   searchWord: string[];
   savedResults: string[];
   setInput: (input: string) => void;
@@ -22,6 +25,7 @@ export default function MainComponent({
   input,
   history,
   searchWord,
+  wordOfDay,
   savedResults,
   setInput,
   setHistory,
@@ -83,8 +87,10 @@ export default function MainComponent({
             savedResults={savedResults}
             history={history}
           />
-        ) : (
+        ) : error ? (
           <p className={styles.error}>{error}</p>
+        ) : (
+          <WordOfDay wordOfDay={wordOfDay} />
         )}
       </div>
     </div>
