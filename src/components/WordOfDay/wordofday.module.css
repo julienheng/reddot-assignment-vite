@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  background-color: white
+  background-color: white;
 }
 
 .definitionwrapper {
@@ -18,43 +18,42 @@
 }
 
 .noun {
-  background-color: #D2F2D4;
+  background-color: #d2f2d4;
   border-radius: 5px;
-  padding: 10px
+  padding: 10px;
 }
 
 .adjective {
-  background-color: #DBEBF6;
+  background-color: #dbebf6;
   border-radius: 5px;
-  padding: 10px
-
+  padding: 10px;
 }
 
 .verb {
-  background-color: #F4C6C6;
+  background-color: #f4c6c6;
   border-radius: 5px;
-  padding: 10px
-
+  padding: 10px;
 }
 
 .interjection {
-  background-color: #F5E0C6;
+  background-color: #f5e0c6;
   border-radius: 5px;
-  padding: 10px
+  padding: 10px;
 }
 
-.definition, p {
+.definition,
+p {
   margin-top: 5px;
   font-size: 0.9rem;
 }
 
 h4 {
-  font-size: 1rem
+  font-size: 1rem;
 }
 
 .word {
   font-size: 2.5rem;
-  line-height: 1
+  line-height: 1;
 }
 
 .phonetic {
@@ -63,10 +62,21 @@ h4 {
   font-style: italic;
 }
 
+.date {
+  color: gray;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 h1 {
   font-family: "DM Serif Display", serif;
 }
-
 
 @media (max-width: 768px) {
   .card {

@@ -27,10 +27,21 @@ export default function WordOfDay({ wordOfDay }: Props) {
     return null; // Return null if wordOfDay is empty or undefined
   }
 
+  const date = new Date();
+
   return (
     <>
-      <h1>Word of the Day</h1>
-
+      <div className={styles.heading}>
+        <h1>Word of the Day</h1>
+        <p className={styles.date}>
+          {date.toLocaleString("en-IN", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
+      </div>
       <div className={styles.card}>
         <div>
           <h2 className={styles.word}>{word[0].word}</h2>
