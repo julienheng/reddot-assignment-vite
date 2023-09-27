@@ -1,8 +1,8 @@
 "use client";
 
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 import styles from "./navbar.module.css";
-import { useEffect } from "react";
+import HamburgerBars from "./HamburgerBars";
 
 type Props = {
   nav: boolean;
@@ -13,85 +13,48 @@ type Props = {
 };
 
 export default function NavBar({
+  nav,
+  setNav,
   activeWord,
   searchWord,
   handleClickWord,
-  nav,
-  setNav,
 }: Props) {
+  const toggleNav = () => setNav(!nav);
+
   return (
     <>
-      <div className={styles.navbar}>
-        {!nav && (
-          <div className={styles.navwrapper}>
-            <AiOutlineMenu
-              size="25"
-              color="#C3C3C3"
-              onClick={() => setNav(!nav)}
-            />
-          </div>
-        )}
-      </div>
+      {/* HAMBURGER BARS */}
+      <HamburgerBars nav={nav} toggleNav={toggleNav} />
 
-      {nav ? (
-        <nav
-          className={`${styles.innerwrapper} ${
-            nav ? styles.slideIn : styles.slideOut
-          }`}
-        >
-          <div className={styles.iconclose} onClick={() => setNav(!nav)}>
-            <AiOutlineClose size="25" color="#C3C3C3" />
-          </div>
+      {/* ANIMATED SIDE BAR */}
+      <nav
+        className={`${styles.innerwrapper} ${
+          nav ? styles.slideIn : styles.slideOut
+        }`}
+      >
+        <div className={styles.iconclose} onClick={toggleNav}>
+          <AiOutlineClose size="25" color="#C3C3C3" />
+        </div>
 
-          <div className={styles.sidebar}>
-            <div>
-              <h2 className={styles.title}>Search History</h2>
-              <div className={styles.content}>
-                {searchWord.map((word: string, index: number) => (
-                  <p
-                    key={index}
-                    className={`${styles.word} ${
-                      activeWord === word ? styles.active : ""
-                    }`}
-                    onClick={() => handleClickWord(word)}
-                  >
-                    {word}
-                  </p>
-                ))}
-              </div>
+        <div className={styles.sidebar}>
+          <div>
+            <h2 className={styles.title}>Search History</h2>
+            <div className={styles.content}>
+              {searchWord.map((word: string, index: number) => (
+                <p
+                  key={index}
+                  className={`${styles.word} ${
+                    activeWord === word ? styles.active : ""
+                  }`}
+                  onClick={() => handleClickWord(word)}
+                >
+                  {word}
+                </p>
+              ))}
             </div>
           </div>
-        </nav>
-      ) : (
-        <nav
-          className={`${styles.innerwrapper} ${
-            nav ? styles.slideIn : styles.slideOut
-          }`}
-        >
-          <div className={styles.iconclose} onClick={() => setNav(!nav)}>
-            <AiOutlineClose size="25" color="#C3C3C3" />
-          </div>
-
-          <div className={styles.sidebar}>
-            <div>
-              <h2 className={styles.title}>Search History</h2>
-              <div className={styles.content}>
-                {searchWord.map((word: string, index: number) => (
-                  <p
-                    key={index}
-                    className={`${styles.word} ${
-                      activeWord === word ? styles.active : ""
-                    }`}
-                    onClick={() => handleClickWord(word)}
-                  >
-                    {word}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </nav>
-      )}
+        </div>
+      </nav>
     </>
   );
 }

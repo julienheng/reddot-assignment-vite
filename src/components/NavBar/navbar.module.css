@@ -1,20 +1,4 @@
-.navbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  background: #3d3832;
-}
 
-.navwrapper {
-  display: inline-flex;
-  height: 3rem;
-  width: 100%;
-  justify-content: end;
-  align-items: center;
-  padding: 0 1rem;
-}
 
 .innerwrapper {
   width: 15rem;
@@ -26,17 +10,18 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
-  animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
 
 .slideIn {
   animation-name: slideIn;
+  animation-duration: 0.5s;
 }
 
 .slideOut {
   animation-name: slideOut;
+  animation-duration: 0.2s;
 }
 
 @keyframes slideIn {
