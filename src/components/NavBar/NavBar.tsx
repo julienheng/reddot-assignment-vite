@@ -2,6 +2,7 @@
 
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import styles from "./navbar.module.css";
+import { useState } from "react";
 
 type Props = {
   nav: boolean;
@@ -18,6 +19,13 @@ export default function NavBar({
   nav,
   setNav,
 }: Props) {
+  const [active, setActive] = useState<boolean>(false);
+
+  const handleClick = () => {
+    setActive(!active);
+    setNav(!nav);
+  };
+
   return (
     <>
       <div className={styles.navbar}>
@@ -26,15 +34,19 @@ export default function NavBar({
             <AiOutlineMenu
               size="25"
               color="#C3C3C3"
-              onClick={() => setNav(!nav)}
+              onClick={() => handleClick()}
             />
           </div>
         )}
       </div>
 
-      {nav && (
-        <nav className={`${styles.innerwrapper} ${nav ? styles.slideIn : styles.slideOut}`}>
-          <div className={styles.iconclose} onClick={() => setNav(!nav)}>
+      {nav ? (
+        <nav
+          className={`${styles.innerwrapper} ${
+            active ? styles.slideIn : styles.slideOut
+          }`}
+        >
+          <div className={styles.iconclose} onClick={() => handleClick()}>
             <AiOutlineClose size="25" color="#C3C3C3" />
           </div>
 
@@ -57,7 +69,7 @@ export default function NavBar({
             </div>
           </div>
         </nav>
-      )}
+      ) : null}
     </>
   );
 }
