@@ -10,7 +10,7 @@
 }
 
 .definitionwrapper {
-  margin: 12px 0;
+  margin-top: 12px;
 }
 
 .example {
@@ -54,6 +54,7 @@ h4 {
 
 .word {
   font-size: 2.5rem;
+  line-height: 1
 }
 
 .phonetic {
