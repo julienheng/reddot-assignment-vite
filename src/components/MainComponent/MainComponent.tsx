@@ -11,7 +11,7 @@ type Props = {
   nav: boolean;
   input: string;
   history: string;
-  wordOfDay: any[];
+  wordOfDay: object[];
   searchWord: string[];
   savedResults: string[];
   setInput: (input: string) => void;

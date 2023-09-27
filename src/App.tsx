@@ -10,9 +10,8 @@ import useSessionStorage from "../utils/useSessionStorage";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-  // const wod = randomWords[Math.floor(Math.random() * randomWords.length)];
-  // console.log(wod);
 
+  // ALL STATES
   const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
   const [savedResults, setSavedResults] = useSessionStorage("savedResults", []);
   const [input, setInput] = useState<string>("");
@@ -20,7 +19,7 @@ function App() {
   const [history, setHistory] = useState<string>(initialHistory);
   const [nav, setNav] = useState<boolean>(false);
   const [activeWord, setActiveWord] = useState<string>("");
-  const [wordOfDay, setWordOfDay] = useState<any[]>([]);
+  const [wordOfDay, setWordOfDay] = useState<object[]>([]);
 
   const handleClickWord = (word: string) => {
     setHistory(word);

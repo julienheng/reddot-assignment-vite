@@ -4,7 +4,7 @@
 import styles from "./wordofday.module.css";
 
 type Props = {
-  wordOfDay: any[];
+  wordOfDay: object[];
 };
 
 export default function WordOfDay({ wordOfDay }: Props) {
