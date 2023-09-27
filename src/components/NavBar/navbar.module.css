@@ -16,32 +16,6 @@
   padding: 0 1rem;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-/* @keyframes slideOut {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-} */
-
-/* .out {
-  animation: slideOut 0.2s ease-in-out;
-} */
-
-.slideIn {
-  animation: slideIn 0.3s linear;
-}
-
 .innerwrapper {
   width: 15rem;
   position: fixed;
@@ -52,7 +26,17 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
-  animation: slideIn 0.3s linear;
+  animation-name: slideIn;
+  animation-duration: 1s;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: 0px;
+  }
 }
 
 .iconclose {
