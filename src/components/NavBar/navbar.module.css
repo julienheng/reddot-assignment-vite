@@ -26,16 +26,17 @@
   background: #3d3832;
   padding: 1rem 1rem;
   color: white;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
 .slideIn {
   animation-name: slideIn;
-  animation-duration: 0.5s;
 }
 
 .slideOut {
   animation-name: slideOut;
-  animation-duration: 0.5s;
 }
 
 @keyframes slideIn {
