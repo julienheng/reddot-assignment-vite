@@ -7,11 +7,17 @@
   background: #3d3832;
 }
 
+.date {
+  color: #C3C3C3;
+  font-size: 0.75rem;
+  font-family: "lato", serif;
+}
+
 .navwrapper {
   display: inline-flex;
   height: 3rem;
   width: 100%;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
 }
