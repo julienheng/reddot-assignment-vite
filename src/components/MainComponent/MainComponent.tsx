@@ -41,8 +41,9 @@ export default function MainComponent({
       const response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${input}`
       );
-      // CHECK FOR RESPONSE STATUS CODE
-      if (response.status === 200) {
+
+      // IF RESPONSE IS SUCCESSFUL
+      if (response.ok) {
         const result = await response.json();
         setData(result);
         setInput("");
@@ -55,14 +56,13 @@ export default function MainComponent({
         setSavedResults(Array.from(new Set([result, ...savedResults])));
         console.log(response.status);
       } else {
-        if (response.status === 404) {
-          setError(
-            `Sorry, we couldn't find any definition for "${input}". Please try again!`
-          );
-          setData([]);
-          setHistory("");
-          setInput("");
-        }
+        // IF RESPONSE IS FAILED
+        setError(
+          `Sorry, we couldn't find any definition for "${input}". Please try again!`
+        );
+        setData([]);
+        setHistory("");
+        setInput("");
       }
     } catch (error) {
       setError(

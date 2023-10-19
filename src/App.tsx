@@ -28,6 +28,7 @@ function App() {
     setNav(!nav);
   };
 
+  // FETCH RANDOM WORD ON PAGE LOAD
   useEffect(() => {
     (async () => {
       const word = await randomWords();
