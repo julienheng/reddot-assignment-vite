@@ -57,10 +57,11 @@ export default function MainComponent({
       } else {
         if (response.status === 404) {
           setError(
-            "Sorry, we couldn't find definitions for the word you are looking for. Please try again!"
+            `Sorry, we couldn't find any definition for "${input}". Please try again!`
           );
           setData([]);
           setHistory("");
+          setInput("");
         }
       }
     } catch (error) {
