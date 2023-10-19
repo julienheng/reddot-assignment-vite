@@ -1,30 +1,30 @@
-
-const randomWords = [
-  "camaraderie",
-  "demagogue",
-  "enervating",
-  "intrepid",
-  "rancorous",
-  "spurious",
-  "fastidious",
-  "serendipity",
-  "flabbergasted",
-];
-
 const fetchRandomWord = async () => {
+  const randomWords = [
+    "camaraderie",
+    "demagogue",
+    "enervating",
+    "intrepid",
+    "rancorous",
+    "spurious",
+    "fastidious",
+    "serendipity",
+    "flabbergasted",
+  ];
+
   const wod = randomWords[Math.floor(Math.random() * randomWords.length)];
+
   try {
     const response = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${wod}`
     );
 
-    if (response.status === 200) {
+    if (response.ok) {
       const result = await response.json();
-      console.log(result);
-      return result; // Return the result
+      return result;
     }
   } catch (error) {
     console.log(error);
+    throw new Error("Error fetching random word");
   }
 };
 
