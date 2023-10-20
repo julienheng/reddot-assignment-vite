@@ -19,6 +19,7 @@ export default function NavBar({
   searchWord,
   handleClickWord,
 }: Props) {
+  
   const toggleNav = () => setNav(!nav);
 
   return (

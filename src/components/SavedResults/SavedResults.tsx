@@ -8,6 +8,7 @@ type Props = {
 };
 
 export default function SavedResults({ savedResults, history }: Props) {
+  
   // Function to generate CSS class based on the part of speech
   const getPartOfSpeechClass = (partOfSpeech: string) => {
     switch (partOfSpeech) {

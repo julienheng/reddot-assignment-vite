@@ -10,16 +10,19 @@ import useSessionStorage from "../utils/useSessionStorage";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-
   // ALL STATES
-  const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
-  const [savedResults, setSavedResults] = useSessionStorage("savedResults", []);
-  const [input, setInput] = useState<string>("");
-  const initialHistory = sessionStorage.getItem("history") || "";
-  const [history, setHistory] = useState<string>(initialHistory);
   const [nav, setNav] = useState<boolean>(false);
   const [activeWord, setActiveWord] = useState<string>("");
   const [wordOfDay, setWordOfDay] = useState<object[]>([]);
+  const [input, setInput] = useState<string>("");
+
+  // MANAGE AND STORE SEARCH WORDS AND SEARCH RESULTS IN SESSION STORAGE
+  const [searchWord, setSearchWord] = useSessionStorage("searchWord", []);
+  const [savedResults, setSavedResults] = useSessionStorage("savedResults", []);
+
+  // DEFAULT EMPTY HISTORY OR RETRIVE WORD FROM SESSION STORAGE
+  const initialHistory = sessionStorage.getItem("history") || "";
+  const [history, setHistory] = useState<string>(initialHistory);
 
   const handleClickWord = (word: string) => {
     setHistory(word);
@@ -54,7 +57,7 @@ function App() {
         activeWord={activeWord}
       />
 
-      {/* MAIN COMPONENT */}
+      {/* MAIN COMPONENT/SCREEN */}
       <MainComponent
         searchWord={searchWord}
         setSearchWord={setSearchWord}

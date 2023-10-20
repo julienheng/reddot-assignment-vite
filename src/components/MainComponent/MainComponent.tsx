@@ -45,6 +45,7 @@ export default function MainComponent({
       // IF RESPONSE IS SUCCESSFUL
       if (response.ok) {
         const result = await response.json();
+
         setData(result);
         setInput("");
         setHistory(input);
@@ -54,7 +55,7 @@ export default function MainComponent({
 
         // UPDATE SEARCH RESULTS & SAVE TO SESSION STORAGE
         setSavedResults(Array.from(new Set([result, ...savedResults])));
-        console.log(response.status);
+        
       } else {
         // IF RESPONSE IS FAILED
         setError(
